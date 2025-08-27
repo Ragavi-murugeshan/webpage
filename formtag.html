@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Course Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .note {
+            font-size: 12px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>University Course Registration</h2>
+        <form action="/submit_registration" method="post">
+            <!-- Personal Details -->
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" pattern="[0-9]{10}" required>
+            <span class="note">Format: 10 digits</span>
+
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <!-- Academic Details -->
+            <label for="studentid">Student ID</label>
+            <input type="text" id="studentid" name="studentid" placeholder="Enter your Student ID" required>
+
+            <label for="department">Department</label>
+            <select id="department" name="department" required>
+                <option value="">--Select Department--</option>
+                <option value="cse">Computer Science</option>
+                <option value="ece">Electronics & Communication</option>
+                <option value="mech">Mechanical Engineering</option>
+                <option value="civil">Civil Engineering</option>
+                <option value="mba">MBA</option>
+            </select>
+
+            <label for="courses">Select Courses</label>
+            <select id="courses" name="courses" multiple size="4" required>
+                <option value="maths">Mathematics</option>
+                <option value="physics">Physics</option>
+                <option value="programming">Programming</option>
+                <option value="economics">Economics</option>
+                <option value="design">Design Thinking</option>
+            </select>
+            <span class="note">Hold Ctrl (Windows) or Command (Mac) to select multiple courses.</span>
+
+            <!-- Account Details -->
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Create a password" required>
+
+            <label for="confirm_password">Confirm Password</label>
+            <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</body>
+</html>
